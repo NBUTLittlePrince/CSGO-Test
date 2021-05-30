@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--  <properties resource="mybatis.properties" />
+         -->
+    <classPathEntry location="D:\ProgramSoftware\Maven\LocalWareHouse\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar" />
+    <context id="msqlTables" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+        <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/csgo?serverTimezone=GMT"
+                        driverClass="com.mysql.jdbc.Driver" password="root" userId="root" >
+
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <!--生成实体类 和数据库表一一对应-->
+        <javaModelGenerator targetPackage="com.csgo.po" targetProject="D:\ProgramData\IDEA\CSGO\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <!-- 从数据库返回的值被清理前后的空格  -->
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!--映射xml文件-->
+        <sqlMapGenerator targetPackage="com.csgo.dao" targetProject="D:\ProgramData\IDEA\CSGO\src\main\resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.csgo.dao" targetProject="D:\ProgramData\IDEA\CSGO\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--数据库表-->
+        <table tableName="weaponfeature" domainObjectName="weaponfeature"
+               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false" >
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+        <table tableName="weaponquality" domainObjectName="weaponquality"
+               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false" >
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+
+    </context>
+</generatorConfiguration>

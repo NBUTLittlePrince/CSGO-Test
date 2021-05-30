@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csgo.dao.WeaponTypeDao">
+    <!--查询全部类型-->
+    <select id="queryWeaponTypeInfoAll" resultType="com.csgo.po.Weapontype">
+        select * from WeaponType
+        <where>
+         <if test="weapontypename!=null">
+          and weapontypename like '%${weapontypename}%'
+             </if>
+        </where>
+        order by weapontypeid desc
+    </select>
+
+    <!--类型的添加-->
+<insert id="addWeaponTypeSubmit" parameterType="WeaponType">
+           insert into WeaponType (weapontypename)values (#{weapontypename})
+
+</insert>
+    
+    <!--根据id查询类型信息-->
+<select id="queryWeaponTypeById" parameterType="int" resultType="WeaponType">
+select * from WeaponType where weapontypeid=#{weapontypeid}
+</select>
+
+    <!--修改武器类型-->
+    <update id="updateWeaponTypeSubmit" parameterType="WeaponType">
+       update  WeaponType set weapontypename=#{weapontypename}
+       where weapontypeid=#{weapontypeid}
+
+    </update>
+
+    <!--删除武器类型-->
+<delete id="deleteWeaponTypeById" parameterType="list">
+
+delete from WeaponType where weapontypeid in 
+<foreach collection="list" item="ids" open="(" separator="," close=")">
+    #{ids}
+</foreach>
+
+</delete>
+
+</mapper>
+
