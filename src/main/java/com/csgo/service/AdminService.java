@@ -2,6 +2,7 @@ package com.csgo.service;
 
 import com.csgo.po.admin;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -31,5 +32,10 @@ public interface AdminService {
      */
 
     admin queryAdminById(Integer id);
+
+    /**
+     * 根据用户名和密码查询用户信息
+     */
+    admin queryUserByNameAndPassword( String username, String password);
 
 }

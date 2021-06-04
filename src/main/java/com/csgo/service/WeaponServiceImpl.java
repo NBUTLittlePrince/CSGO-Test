@@ -1,6 +1,7 @@
 package com.csgo.service;
 
 import com.csgo.dao.weaponMapper;
+import com.csgo.po.Weapontype;
 import com.csgo.po.admin;
 import com.csgo.po.weapon;
 import com.github.pagehelper.PageHelper;
@@ -45,4 +46,12 @@ public class WeaponServiceImpl implements WeaponService{
     public weapon queryWeaponById(Integer id) {
         return weaponDao.selectByPrimaryKey(id);
     }
+
+    @Override
+    public List<weapon> getWeaponCountByType() {
+
+        List<weapon> list= weaponDao.getWeaponCountByType();
+        return list;
+    }
+
 }

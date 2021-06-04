@@ -1,4 +1,5 @@
 package com.csgo.service;
+import com.csgo.po.Weapontype;
 import com.csgo.po.weapon;
 import com.github.pagehelper.PageInfo;
 
@@ -31,4 +32,7 @@ public interface WeaponService {
      */
 
     weapon queryWeaponById(Integer id);
+
+    List<weapon> getWeaponCountByType();
+
 }

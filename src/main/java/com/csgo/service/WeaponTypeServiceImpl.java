@@ -52,4 +52,6 @@ private WeaponTypeDao weapontypedao;
         }
           weapontypedao.deleteWeaponTypeById(list);
     }
+
+
 }

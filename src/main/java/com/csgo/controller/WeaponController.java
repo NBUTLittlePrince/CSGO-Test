@@ -9,10 +9,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -47,7 +44,7 @@ public class WeaponController {
      * 添加武器
      */
     @GetMapping("/addWeapon")
-    public String addAdmin(){return "weapon/addWeapon";}
+    public String addWeapon(){return "weapon/addWeapon";}
 
     /**
      * 提交武器添加功能
@@ -88,12 +85,23 @@ public class WeaponController {
     /**
      * 根据id查询武器信息
      */
-    @GetMapping("queryWeaponById")
+    @GetMapping("/queryWeaponById")
     public String queryWeaponById(Integer id, Model model)
     {
-        model.addAttribute("id",id);
+        weapon weapon=weaponService.queryWeaponById(id);
+        model.addAttribute("weapon",weapon);
         return  "weapon/updateWeapon";
     }
 
+
+    /**
+     * 修改实现功能
+     */
+    @ResponseBody
+    @RequestMapping("/updateWeaponInfoSubmit")
+    public R updateWeaponInfoSubmit(@RequestBody weapon weapon){
+        weaponService.updateWeaponSubmit(weapon);
+        return R.ok();
+    }
 
 }

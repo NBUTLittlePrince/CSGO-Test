@@ -23,7 +23,7 @@
         <div class="demoTable">
             类型名称：
             <div class="layui-inline">
-                <input class="layui-input" name="weapontypename" id="weapontypename" autocomplete="off">
+                <input class="layui-input" name="weaponfeaturename" id="weaponfeaturename" autocomplete="off">
             </div>
             <button class="layui-btn" data-type="reload">搜索</button>
         </div>
@@ -75,7 +75,7 @@
 
         var $ = layui.$, active = {
             reload: function(){
-                var weapontypename = $('#weaponfeaturename').val();
+                var weaponfeaturename = $('#weaponfeaturename').val();
 
                 //执行重载
                 table.reload('testReload', {
@@ -107,7 +107,7 @@
         function getCheackId(data){
             var arr=new Array();
             for(var i=0;i<data.length;i++){
-                arr.push(data[i].weapontypeid);
+                arr.push(data[i].weaponfeatureid);
             }
             //拼接id
             return arr.join(",");
@@ -120,7 +120,7 @@
         function deleteWeaponTypeByIds(ids ,index){
             //向后台发送请求
             $.ajax({
-                url: "deleteWeaponType",
+                url: "deleteFeature",
                 type: "POST",
                 data: {ids: ids},
                 success: function (result) {
@@ -147,13 +147,13 @@
             var data=obj.data;
             if (obj.event === 'edit') {  // 监听添加操作
                 var index = layer.open({
-                    title: '修改武器类型',
+                    title: '修改武器外观',
                     type: 2,
                     shade: 0.2,
                     maxmin:true,
                     shadeClose: true,
                     area: ['60%', '60%'],
-                    content: '<%=basePath%>queryWeaponTypeById?id='+data.weapontypeid,
+                    content: '<%=basePath%>queryFeatureById?id='+data.weaponfeatureid,
                 });
                 $(window).on("resize", function () {
                     layer.full(index);
@@ -161,7 +161,7 @@
             } else if (obj.event === 'delete') {  // 监听删除操作
                 layer.confirm('真的删除行么', function (index) {
                     //调用删除功能
-                    deleteWeaponTypeByIds(data.weapontypeid,index);
+                    deleteWeaponTypeByIds(data.weaponfeatureid,index);
                     layer.close(index);
                 });
             }
@@ -179,13 +179,13 @@
         table.on('toolbar(currentTableFilter)', function (obj) {
             if (obj.event === 'add') {  // 监听添加操作
                 var index = layer.open({
-                    title: '添加武器类型',
+                    title: '添加武器外观',
                     type: 2,
                     shade: 0.2,
                     maxmin:true,
                     shadeClose: true,
                     area: ['60%', '60%'],
-                    content: '<%=basePath%>typeAdd',
+                    content: '<%=basePath%>addFeature',
                 });
                 $(window).on("resize", function () {
                     layer.full(index);

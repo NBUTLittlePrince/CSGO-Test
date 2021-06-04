@@ -97,4 +97,17 @@
     set WeaponQualityName = #{weaponqualityname,jdbcType=VARCHAR}
     where WeaponQualityId = #{weaponqualityid,jdbcType=INTEGER}
   </update>
+
+
+
+  <!--高级查询列表-->
+  <select id="queryQualityInfoAll" parameterType="weaponquality" resultType="weaponquality">
+    select * from weaponquality
+    <where>
+      <if test="weaponqualityname!=null and weaponqualityname!=''">
+        and weaponqualityname like '%${weaponqualityname}%'
+      </if>
+    </where>
+    order by weaponqualityid desc
+  </select>
 </mapper>

@@ -34,4 +34,6 @@ public interface WeaponTypeService {
      *根据ids删除记录
      */
     void deleteWeaponTypeById(List<String> id);
+
+
 }

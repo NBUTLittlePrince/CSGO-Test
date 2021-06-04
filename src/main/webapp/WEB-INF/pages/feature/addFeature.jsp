@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>武器类型添加</title>
+    <title>武器外观添加</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -23,10 +23,10 @@
 <body>
 <div class="layui-form layuimini-form">
     <div class="layui-form-item">
-        <label class="layui-form-label required">武器类型名称</label>
+        <label class="layui-form-label required">武器外观名称</label>
         <div class="layui-input-block">
-            <input type="text" name="weapontypename" lay-verify="required" lay-reqtext="武器类型名称不能为空" placeholder="请输入武器类型名称" value="" class="layui-input">
-            <tip>填写武器类型名称。</tip>
+            <input type="text" name="weaponfeaturename" lay-verify="required" lay-reqtext="武器外观名称不能为空" placeholder="请输入武器外观名称" value="" class="layui-input">
+            <tip>填写武器外观名称。</tip>
         </div>
     </div>
 
@@ -48,7 +48,7 @@
             var datas=data.field;//form单中的数据信息
             //向后台发送数据提交添加
             $.ajax({
-                url:"addWeaponTypeSubmit",
+                url:"addFeatureSubmit",
                 type:"POST",
                 data:datas,
                 success:function(result){

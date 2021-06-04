@@ -37,4 +37,6 @@ public interface WeaponTypeDao {
      */
     void deleteWeaponTypeById(List<Integer> id);
 
+
+
 }

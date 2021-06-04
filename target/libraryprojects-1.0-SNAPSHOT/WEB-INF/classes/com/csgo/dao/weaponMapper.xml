@@ -171,13 +171,33 @@
     </association>
   </resultMap>
 
-  <!--高级查询列表-->
   <select id="queryWeaponInfoAll" parameterType="weapon" resultMap="queryWeaponAllMap">
     select w.weaponid,w.weaponname,w.weaponprice,w.weaponstore,f.weaponfeaturename,q.weaponqualityname,t.weapontypename
     from  weapon w,weaponfeature f,weaponquality q,weapontype t
     where
-    w.weaponfeatureid=f.weaponfeatureid and w.weaponqualityid=q.weaponqualityid and w.weaponqualityid=t.weapontypeid
+    w.weaponfeatureid=f.weaponfeatureid and w.weaponqualityid=q.weaponqualityid and w.weapontypeid=t.weapontypeid
+    <if test="weaponname!=null">
+      and w.weaponname like '%${weaponname}%'
+    </if>
+    <if test="weaponfeatureid!=null">
+      and f.weaponfeatureid=#{weaponfeatureid}
+    </if>
+    <if test="weapontypeid!=null">
+      and t.weapontypeid=#{weapontypeid}
+    </if>
+    <if test="weaponqualityid!=null">
+      and q.weaponqualityid=#{weaponqualityid}
+    </if>
+  </select>
 
+
+
+  <select id="getWeaponCountByType" resultType="com.csgo.po.weapon">
+    select count(w.weapontypeid) as counts,f.weaponfeaturename as weapontypename
+    from weaponfeature f
+           left join weapon w on w.weaponfeatureid=f.weaponfeatureid
+    group by
+      f.weaponfeaturename
   </select>
 
 </mapper>

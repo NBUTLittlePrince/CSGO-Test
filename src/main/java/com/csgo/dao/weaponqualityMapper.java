@@ -1,6 +1,9 @@
 package com.csgo.dao;
 
+import com.csgo.po.weaponfeature;
 import com.csgo.po.weaponquality;
+
+import java.util.List;
 
 public interface weaponqualityMapper {
     /**
@@ -50,4 +53,6 @@ public interface weaponqualityMapper {
      * @mbggenerated Thu May 27 15:38:42 CST 2021
      */
     int updateByPrimaryKey(weaponquality record);
+
+    List<weaponquality> queryQualityInfoAll(weaponquality weaponquality);
 }

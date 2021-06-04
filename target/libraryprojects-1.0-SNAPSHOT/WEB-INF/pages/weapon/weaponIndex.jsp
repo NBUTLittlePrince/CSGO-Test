@@ -33,13 +33,19 @@
                             <option value="">请选择</option>
                         </select>
                     </div>
+                    武器质量
+                    <div class="layui-inline">
+                        <select name="qualityId" id="qualityId" lay-verify="required">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
                     武器类型
                     <div class="layui-inline">
                         <select name="typeId" id="typeId" lay-verify="required">
                             <option value="">请选择</option>
                         </select>
                     </div>
-                    <button class="layui-btn" data-type="reload">高级查询</button>
+                    <button class="layui-btn" data-type="reload">查询</button>
                     <%--<button class="layui-btn" lay-submit data-type="reload"  lay-filter="queryBook">高级查询</button>--%>
                 </div>
             </div>
@@ -110,21 +116,53 @@
             form.render('select');
         },"json")
 
+        //动态获取武器外观的数据
+        $.get("findFeatureList",{},function (data) {
+            var list=data;
+            var select=document.getElementById("featureId");
+            if(list!=null|| list.size()>0){
+                for(var c in list){
+                    var option=document.createElement("option");
+                    option.setAttribute("value",list[c].weaponfeatureid);
+                    option.innerText=list[c].weaponfeaturename;
+                    select.appendChild(option);
+                }
+            }
+            form.render('select');
+        },"json")
+
+
+        //动态获取武器质量的数据
+        $.get("findQualityList",{},function (data) {
+            var list=data;
+            var select=document.getElementById("qualityId");
+            if(list!=null|| list.size()>0){
+                for(var c in list){
+                    var option=document.createElement("option");
+                    option.setAttribute("value",list[c].weaponqualityid);
+                    option.innerText=list[c].weaponqualityname;
+                    select.appendChild(option);
+                }
+            }
+            form.render('select');
+        },"json")
 
         var $ = layui.$, active = {
             reload: function(){
                 var name = $('#name').val();
-                var isbn= $('#isbn').val();
-                var typeId= $('#typeId').val();
+                var feature= $('#featureId').val();
+                var quality= $('#qualityId').val();
+                var type= $('#typeId').val();
                 //执行重载
                 table.reload('testReload', {
                     page: {
                         curr: 1 //重新从第 1 页开始
                     }
                     ,where: {
-                        name:name,
-                        isbn:isbn,
-                        typeId:typeId
+                        weaponname:name,
+                       weaponfeatureid:feature,
+                        weaponqualityid:quality,
+                        weapontypeid:type
                     }
                 }, 'data');
             }
@@ -142,13 +180,13 @@
             var data=obj.data;
             if (obj.event === 'edit') {  // 监听添加操作
                 var index = layer.open({
-                    title: '修改图书类型',
+                    title: '修改武器信息',
                     type: 2,
                     shade: 0.2,
                     maxmin:true,
                     shadeClose: true,
-                    area: ['100%', '100%'],
-                    content: '<%=basePath%>queryBookInfoById?id='+data.id,
+                    area: ['60%', '60%'],
+                    content: '<%=basePath%>queryWeaponById?id='+data.weaponid,
                 });
                 $(window).on("resize", function () {
                     layer.full(index);
@@ -156,7 +194,7 @@
             } else if (obj.event === 'delete') {  // 监听删除操作
                 layer.confirm('真的删除行么', function (index) {
                     //调用删除功能
-                    deleteInfoByIds(data.id,index);
+                    deleteInfoByIds(data.weaponid,index);
                     layer.close(index);
                 });
             }
@@ -173,7 +211,7 @@
         function getCheackId(data){
             var arr=new Array();
             for(var i=0;i<data.length;i++){
-                arr.push(data[i].id);
+                arr.push(data[i].weaponid);
             }
             //拼接id
             return arr.join(",");
@@ -186,7 +224,7 @@
         function deleteInfoByIds(ids ,index){
             //向后台发送请求
             $.ajax({
-                url: "deleteBookByIds",
+                url: "deleteWeapon",
                 type: "POST",
                 data: {ids: ids},
                 success: function (result) {
@@ -212,13 +250,13 @@
         table.on('toolbar(currentTableFilter)', function (obj) {
             if (obj.event === 'add') {  // 监听添加操作
                 var index = layer.open({
-                    title: '添加图书',
+                    title: '添加武器',
                     type: 2,
                     shade: 0.2,
                     maxmin:true,
                     shadeClose: true,
-                    area: ['100%', '100%'],
-                    content: '<%=basePath%>addBook',
+                    area: ['60%', '60%'],
+                    content: '<%=basePath%>addWeapon',
                 });
                 $(window).on("resize", function () {
                     layer.full(index);

@@ -22,7 +22,7 @@
 
     <style>
         html, body {width: 100%;height: 100%;overflow: hidden}
-        body {background: url("${basePath}images/bg.png");}
+        body {background: url("${basePath}images/1.png");}
         body:after {content:'';background-repeat:no-repeat;background-size:cover;-webkit-filter:blur(3px);-moz-filter:blur(3px);-o-filter:blur(3px);-ms-filter:blur(3px);filter:blur(3px);position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;}
         .layui-container {width: 100%;height: 100%;overflow: hidden}
         .admin-login-background {width:450px;height:360px;position:absolute;left:65%;top:45%;margin-left:-180px;margin-top:-100px;}
@@ -42,7 +42,7 @@
         <div class="layui-form login-form">
             <form class="layui-form"  action="<%=basePath%>loginIn" method="post">
                 <div class="layui-form-item logo-title">
-                    <h1>图书馆管理系统</h1>
+                    <h1>CSGO饰品管理系统</h1>
                     <div style="color: red;text-align: center;">${msg}</div>
                 </div>
                 <div class="layui-form-item">
@@ -58,7 +58,7 @@
                     <select name="type" lay-verify="required">
                         <option value="">请选择用户类型</option>
                         <option value="1">管理员</option>
-                        <option value="2">读者</option>
+                        <option value="2">用户</option>
                     </select>
                 </div>
                 <div class="layui-form-item">

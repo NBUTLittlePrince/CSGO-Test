@@ -45,4 +45,11 @@ public class AdminServiceImpl implements AdminService{
     public admin queryAdminById(Integer id) {
         return adminDao.selectByPrimaryKey(id);
     }
+
+    @Override
+    public admin queryUserByNameAndPassword(String username, String password) {
+        return adminDao.queryUserByNameAndPassword(username,password);
+    }
+
+
 }

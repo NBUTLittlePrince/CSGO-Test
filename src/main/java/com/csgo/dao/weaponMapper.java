@@ -1,5 +1,6 @@
 package com.csgo.dao;
 
+import com.csgo.po.Weapontype;
 import com.csgo.po.admin;
 import com.csgo.po.weapon;
 
@@ -55,4 +56,6 @@ public interface weaponMapper {
     int updateByPrimaryKey(weapon record);
 
     List<weapon> queryWeaponInfoAll(weapon weapon);
+
+    List<weapon> getWeaponCountByType();
 }

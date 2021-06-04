@@ -69,7 +69,7 @@
                     <a href="javascript:;" data-check-screen="full"><i class="fa fa-arrows-alt"></i></a>
                 </li>
                 <li class="layui-nav-item layuimini-setting">
-                  <span style="color: red">${sessionScope.user.username}</span>
+                  <span style="color: gold">${sessionScope.user.username}</span>
                     <dl class="layui-nav-child">
                         <dd>
                             <a href="javascript:;" layuimini-content-href="page/user-setting.html" data-title="基本资料" data-icon="fa fa-gears">基本资料<span class="layui-badge-dot"></span></a>
@@ -148,7 +148,7 @@
 
         var options = {
             <c:choose>
-                <c:when test="${sessionScope.type.equals('reader')}">
+                <c:when test="${sessionScope.type.equals('user')}">
                         iniUrl: "api/init2.json",    // 初始化接口
                  </c:when>
                  <c:otherwise>

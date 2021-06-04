@@ -1,5 +1,6 @@
 package com.csgo.service;
 
+import com.csgo.po.admin;
 import com.csgo.po.user;
 import com.github.pagehelper.PageInfo;
 
@@ -31,4 +32,9 @@ public interface UserService {
      */
 
     user queryUserById(Integer id);
+
+    /**
+     * 根据用户名和密码查询用户信息
+     */
+    user queryUserByNameAndPassword(String username, String password);
 }

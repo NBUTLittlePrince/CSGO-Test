@@ -2,6 +2,7 @@ package com.csgo.dao;
 
 import com.csgo.po.admin;
 import com.csgo.po.user;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -55,4 +56,6 @@ public interface userMapper {
     int updateByPrimaryKey(user record);
 
     List<user> queryUserInfoAll(user user);
+
+    user queryUserByNameAndPassword(@Param("username") String username, @Param("password")  String password);
 }

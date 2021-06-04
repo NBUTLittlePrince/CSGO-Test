@@ -5,7 +5,7 @@
   },
   "logoInfo": {
     "title": "CSGO",
-    "image": "images/logo.png",
+    "image": "images/1.png",
     "href": ""
   },
   "menuInfo": [
@@ -17,7 +17,7 @@
       "child": [
           {
               "title": "交易管理",
-              "href": "transactionIndex",
+              "href": "dealIndex",
               "icon": "fa fa-window-maximize",
               "target": "_self"
             },
@@ -30,6 +30,12 @@
         {
           "title": "武器外观管理",
           "href": "featureIndex",
+          "icon": "fa fa-window-maximize",
+          "target": "_self"
+        },
+        {
+          "title": "武器质量管理",
+          "href": "qualityIndex",
           "icon": "fa fa-window-maximize",
           "target": "_self"
         },

@@ -106,6 +106,6 @@
         and weaponfeaturename like '%${weaponfeaturename}%'
       </if>
     </where>
-
+    order by weaponfeatureid desc
   </select>
 </mapper>

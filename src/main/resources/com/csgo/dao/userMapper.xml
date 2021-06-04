@@ -142,4 +142,9 @@
     </where>
 
   </select>
+
+
+  <select id="queryUserByNameAndPassword" resultType="com.csgo.po.user">
+    select * from user where username=#{username} and password=#{password}
+  </select>
 </mapper>
