@@ -15,6 +15,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="<%=basePath%>lib/layui-v2.5.5/css/layui.css" media="all">
     <link rel="stylesheet" href="<%=basePath%>css/public.css" media="all">
+    <style>
+        .layui-table td, .layui-table th, .layui-table-col-set, .layui-table-view,.layui-table-fixed-r, .layui-table-grid-down, .layui-table-header, .layui-table-page, .layui-table-tips-main, .layui-table-tool, .layui-table-total, .layui-table-view, .layui-table[lay-skin=line], .layui-table[lay-skin=row]{
+            border-color: #4a4a4a;
+            background: #292929;
+            color: whitesmoke;
+        }
+        .layui-icon{
+            color: whitesmoke;
+        }
+        .layui-table-page .layui-laypage span {
+            margin-left: 0;
+            padding: 0;
+            color: whitesmoke;
+        }
+        .layui-form-select dl dd {
+            /* cursor: pointer; */
+            color: black;
+        }
+    </style>
 </head>
 <body>
 <div class="layuimini-container">

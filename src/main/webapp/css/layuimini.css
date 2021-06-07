@@ -142,15 +142,25 @@
 
 .layuimini-tab .layui-tab-title {
     border: none;
-    border: 1px solid whitesmoke;
-    background-color: white;
+    border: 1px solid #585858;
+    background-color: #2f2f2f;
 }
 
 .layuimini-tab .layui-tab-title li {
-    border-right: 1px solid whitesmoke;
-    color: dimgray;
+    border-right: 1px solid #585858;
+    color: whitesmoke;
 }
-
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /* fixed 定位覆盖页面 */
+    z-index: 9999; /* 层叠放到很高的一个位置，盖在页面上 */
+    mix-blend-mode: difference; /* 混合模式，反色 */
+    background-color: #fff; /* 结合混合模式做反色处理的对比色 */
+    pointer-events: none; /* 作为一个层覆盖在元素上，但不能妨碍页面元素点击，添加一个穿透效果 */
+}
 .layuimini-tab .layui-tab-title .layui-tab-bar {
     display: none;
 }
@@ -215,25 +225,26 @@
     line-height: 35px;
     width: 35px;
     text-align: center;
-    background-color: white;
-    border-top: whitesmoke 1px solid;
-    border-bottom: whitesmoke 1px solid;
+    background-color: #2f2f2f;
+    border-top: #585858 1px solid;
+    border-bottom: #585858 1px solid;
+    color:whitesmoke;
 }
 
 .layuimini-tab .layuimini-tab-roll-left {
     left: 0px;
-    border-right: whitesmoke 1px solid;
-    border-left: whitesmoke 1px solid;
+    border-right: #585858 1px solid;
+    border-left: #585858 1px solid;
 }
 
 .layuimini-tab .layuimini-tab-roll-right {
     right: 35px;
-    border-left: 1px solid whitesmoke;
+    border-left: 1px solid #585858;
 }
 
 .layuimini-tab .layui-tab-tool {
     right: 0px;
-    border-left: 1px solid whitesmoke;
+    border-left: 1px solid #585858;
 }
 
 .layuimini-tab .layui-tab-control .layui-tab-tool,

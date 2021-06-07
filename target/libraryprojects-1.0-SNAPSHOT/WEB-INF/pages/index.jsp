@@ -28,8 +28,14 @@
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        body {background: #454545
+        }
+
+    </style>
     <style id="layuimini-bg-color">
     </style>
+
 </head>
 
 <body class="layui-layout-body layuimini-all">
@@ -97,17 +103,18 @@
     </div>
 
     <!--初始化加载层-->
-    <div class="layuimini-loader">
-        <div class="layuimini-loader-inner"></div>
+    <div class="layuimini-loader" style="background: #494949">
+        <div class="layuimini-loader-inner" style="background: #494949"></div>
     </div>
 
     <!--手机端遮罩层-->
-    <div class="layuimini-make"></div>
+    <div class="layuimini-make" style="background: #494949"></div>
 
     <!-- 移动导航 -->
     <div class="layuimini-site-mobile"><i class="layui-icon"></i></div>
 
     <div class="layui-body">
+
 
         <div class="layuimini-tab layui-tab-rollTool layui-tab" lay-filter="layuiminiTab" lay-allowclose="true">
             <ul class="layui-tab-title">
@@ -121,6 +128,7 @@
                         <li class="layui-nav-item">
                             <a href="javascript:;"><span class="layui-nav-more"></span></a>
                             <dl class="layui-nav-child">
+
                                 <dd><a href="javascript:;" layuimini-tab-close="current">关 闭 当 前</a></dd>
                                 <dd><a href="javascript:;" layuimini-tab-close="other">关 闭 其 他</a></dd>
                                 <dd><a href="javascript:;" layuimini-tab-close="all">关 闭 全 部</a></dd>
@@ -129,8 +137,10 @@
                     </ul>
                 </li>
             </div>
+
             <div class="layui-tab-content">
-                <div id="layuiminiHomeTabIframe" class="layui-tab-item layui-show"></div>
+                <div id="layuiminiHomeTabIframe" class="layui-tab-item layui-show">
+                </div>
             </div>
         </div>
 

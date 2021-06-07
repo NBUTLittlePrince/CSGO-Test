@@ -17,13 +17,14 @@
     <link rel="stylesheet" href="<%=basePath%>lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
     <link rel="stylesheet" href="<%=basePath%>css/public.css" media="all">
     <style>
-        .layui-card {border:1px solid #f2f2f2;border-radius:5px;}
+        .layui-card {border:1px solid #585858;border-radius:5px;background-color: #383838;color:whitesmoke;}
+        .layui-card-header {border-bottom: #6c6c6c;color:whitesmoke;}
         .icon {margin-right:10px;color:#1aa094;}
         .icon-cray {color:#ffb800!important;}
         .icon-blue {color:#1e9fff!important;}
         .icon-tip {color:#ff5722!important;}
         .layuimini-qiuck-module {text-align:center;margin-top: 10px}
-        .layuimini-qiuck-module a i {display:inline-block;width:100%;height:60px;line-height:60px;text-align:center;border-radius:2px;font-size:30px;background-color:#F8F8F8;color:#333;transition:all .3s;-webkit-transition:all .3s;}
+        .layuimini-qiuck-module a i {display:inline-block;width:100%;height:60px;line-height:60px;text-align:center;border-radius:2px;font-size:30px;background-color: #535353;color: #f3f3f3;transition:all .3s;-webkit-transition:all .3s;}
         .layuimini-qiuck-module a cite {position:relative;top:2px;display:block;color:#666;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;font-size:14px;}
         .welcome-module {width:100%;height:210px;}
         .panel {background-color:#fff;border:1px solid transparent;border-radius:3px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}
@@ -33,7 +34,7 @@
         .layui-red {color:red}
         .main_btn > p {height:40px;}
         .layui-bg-number {background-color:#F8F8F8;}
-        .layuimini-notice:hover {background:#f6f6f6;}
+        .layuimini-notice:hover {background: #2a2a2a;}
         .layuimini-notice {padding:7px 16px;clear:both;font-size:12px !important;cursor:pointer;position:relative;transition:background 0.2s ease-in-out;}
         .layuimini-notice-title,.layuimini-notice-label {
             padding-right: 70px !important;text-overflow:ellipsis!important;overflow:hidden!important;white-space:nowrap!important;}

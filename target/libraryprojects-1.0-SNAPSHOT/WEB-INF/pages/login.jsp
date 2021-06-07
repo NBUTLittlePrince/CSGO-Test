@@ -22,23 +22,28 @@
 
     <style>
         html, body {width: 100%;height: 100%;overflow: hidden}
-        body {background: url("${basePath}images/1.png");}
+        <%--body {background: url("${basePath}images/login_bg.png");}--%>
+        body {background: #232323;color:black;}
         body:after {content:'';background-repeat:no-repeat;background-size:cover;-webkit-filter:blur(3px);-moz-filter:blur(3px);-o-filter:blur(3px);-ms-filter:blur(3px);filter:blur(3px);position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;}
         .layui-container {width: 100%;height: 100%;overflow: hidden}
         .admin-login-background {width:450px;height:360px;position:absolute;left:65%;top:45%;margin-left:-180px;margin-top:-100px;}
         .logo-title {text-align:center;letter-spacing:2px;padding:14px 0;}
-        .logo-title h1 {color:#1E9FFF;font-size:25px;font-weight:bold;}
-        .login-form {background-color:#fff;border:1px solid #fff;border-radius:3px;padding:14px 20px;box-shadow:0 0 8px #eeeeee;}
+        .logo-title h1 {color: #d2d2d2;font-size:25px;font-weight:bold;}
+        .login-form {background-color: #343434;border:1px solid #232323;border-radius:3px;padding:14px 20px;box-shadow:0 0 8px #232323;}
         .login-form .layui-form-item {position:relative;}
-        .login-form .layui-form-item label {position:absolute;left:1px;top:1px;width:38px;line-height:36px;text-align:center;color:#d2d2d2;}
+        .login-form .layui-form-item label {position:absolute;left:1px;top:1px;width:38px;line-height:36px;text-align:center;color: #878787;}
         .login-form .layui-form-item input {padding-left:36px;}
-        .captcha-img img {height:34px;border:1px solid #e6e6e6;height:36px;width:100%;}
+        .layui-form-select dl dd.layui-this {background-color: #5FB878;color: #160808;}
+        .captcha-img img {height:34px;border:1px solid #a1a1a1;height:36px;width:100%;}
+
     </style>
 </head>
 <body>
 
 <div class="layui-container">
+    <img src="${basePath}images/login_bg.png" style="position: fixed;left: 250px;top:400px; width: 34%;"/>
     <div class="admin-login-background">
+
         <div class="layui-form login-form">
             <form class="layui-form"  action="<%=basePath%>loginIn" method="post">
                 <div class="layui-form-item logo-title">
@@ -57,8 +62,8 @@
                     <label class="layui-icon layui-icon-username"></label>
                     <select name="type" lay-verify="required">
                         <option value="">请选择用户类型</option>
-                        <option value="1">管理员</option>
-                        <option value="2">用户</option>
+                        <option value="1" style="color: black">管理员</option>
+                        <option value="2" style="color: black">用户</option>
                     </select>
                 </div>
                 <div class="layui-form-item">

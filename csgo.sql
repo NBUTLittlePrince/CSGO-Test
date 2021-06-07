@@ -4,7 +4,7 @@ Navicat MySQL Data Transfer
 Source Server         : localhost_3306
 Source Server Version : 50734
 Source Host           : localhost:3306
-Source Database       : csgo
+Source Database       : 
 
 Target Server Type    : MYSQL
 Target Server Version : 50734
@@ -12,7 +12,7 @@ File Encoding         : 65001
 
 Date: 2021-06-04 12:35:44
 */
-
+USE csgo;
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
