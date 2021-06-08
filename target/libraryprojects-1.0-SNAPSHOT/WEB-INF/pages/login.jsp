@@ -16,6 +16,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="<%=basePath%>images/logo_left.png">
     <script type="text/javascript" src="<%=basePath%>/lib/jquery-3.4.1/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="<%=basePath%>/lib/layui-v2.5.5/css/layui.css" media="all">
     <link rel="stylesheet" href="<%=basePath%>/css/public.css" media="all">
