@@ -19,7 +19,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <link rel="icon" href="<%=basePath%>images/favicon.ico">
+    <link rel="icon" href="<%=basePath%>images/logo_left.png">
     <link rel="stylesheet" href="<%=basePath%>lib/layui-v2.5.5/css/layui.css" media="all">
     <link rel="stylesheet" href="<%=basePath%>css/layuimini.css?v=2.0.4" media="all">
     <link rel="stylesheet" href="<%=basePath%>css/themes/default.css" media="all">
