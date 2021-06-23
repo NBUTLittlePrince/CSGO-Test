@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="<%=basePath%>lib/layui-v2.5.5/css/layui.css" media="all">
     <link rel="stylesheet" href="<%=basePath%>css/public.css" media="all">
     <style>
+        .layui-layer {background: #343434;}
+        blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul {background: #343434;}
+        .layui-layer-dialog .layui-layer-content{background: #343434;}
         .layui-table td, .layui-table th, .layui-table-col-set, .layui-table-view,.layui-table-fixed-r, .layui-table-grid-down, .layui-table-header, .layui-table-page, .layui-table-tips-main, .layui-table-tool, .layui-table-total, .layui-table-view, .layui-table[lay-skin=line], .layui-table[lay-skin=row]{
             border-color: #4a4a4a;
             background: #292929;

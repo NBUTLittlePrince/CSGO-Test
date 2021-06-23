@@ -18,6 +18,8 @@
         body {
             background-color: #343434;
         }
+        blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul {background: #343434;}
+        .layui-layer-dialog .layui-layer-content{background: #343434;}
     </style>
 </head>
 <body>

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<%=basePath%>lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
     <link rel="stylesheet" href="<%=basePath%>css/public.css" media="all">
     <style>
+
         .layui-card {border:1px solid #585858;border-radius:5px;background-color: #383838;color:whitesmoke;}
         .layui-card-header {border-bottom: #6c6c6c;color:whitesmoke;}
         .icon {margin-right:10px;color:#1aa094;}
