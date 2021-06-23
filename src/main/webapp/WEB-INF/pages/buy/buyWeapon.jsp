@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>修改武器信息</title>
+    <title>购买武器</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -51,13 +51,7 @@
         </div>
     </div>
     <input type="hidden" name="weapontypeid"   value="${good.weapontypeid}">
-
-    <div class="layui-form-item">
-        <label class="layui-form-label required">库存</label>
-        <div class="layui-input-block">
-            <input type="number" name="weaponstore"  value="${good.weaponstore}"   class="layui-input">
-        </div>
-    </div>
+    <input type="hidden" name="weaponstore"   value="${good.weaponstore}">
     <div class="layui-form-item">
         <label class="layui-form-label required">总计</label>
         <div class="layui-input-block">

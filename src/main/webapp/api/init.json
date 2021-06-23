@@ -22,7 +22,7 @@
               "target": "_self"
             },
         {
-          "title": "饰品管理",
+          "title": "武器管理",
           "href": "weaponIndex",
           "icon": "fa fa-gears",
           "target": "_self"
@@ -61,22 +61,6 @@
           "title": "管理员管理",
           "href": "adminIndex",
           "icon": "fa fa-window-maximize",
-          "target": "_self"
-        }
-      ]
-    },
-    
-    {
-      "title": "统计分析",
-      "icon": "fa fa-slideshare",
-      "href": "",
-      "target": "_self",
-      "child": [
-
-        {
-          "title": "统计分析",
-          "href": "page/error.html",
-          "icon": "fa fa-superpowers",
           "target": "_self"
         }
       ]

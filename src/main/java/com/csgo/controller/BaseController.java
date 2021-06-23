@@ -26,6 +26,12 @@ public class BaseController {
         return "index";
     }
 
+    @GetMapping("/userPassword")
+    public String typeIndex()
+    {
+        return "user-setting/user-password";
+    }
+
     @GetMapping("/welcome")
     public String welcome(Model model)
     {

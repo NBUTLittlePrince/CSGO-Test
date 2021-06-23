@@ -84,7 +84,7 @@
                 {field: 'id', width: 100, title: 'ID', sort: true},
                 {templet:"<div>{{d.content.substring(0,15)}}....</div>", width: 180, title: '公告内容'},
                 {templet:"<div>{{layui.util.toDateString(d.createDate,'yyyy-MM-dd HH:mm:ss' )}}</div>", width: 280, title: '发布时间'},
-                {field: 'author', width: 100, title: '发布人'},
+                {field: 'author', width: 100, title: '用户ID'},
                 {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],

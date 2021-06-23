@@ -91,7 +91,7 @@ public class LoginController {
             }
             session.setAttribute("user",user);
             session.setAttribute("type","admin");
-        }else{//来自读者信息表
+        }else{//来自信息表
 
             user user1=userService.queryUserByNameAndPassword(username,password);
             if(user1==null){
