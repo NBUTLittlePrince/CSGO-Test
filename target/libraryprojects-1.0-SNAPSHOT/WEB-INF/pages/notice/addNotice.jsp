@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="<%=basePath%>css/public.css" media="all">
     <style>
         body {
-            background-color: #ffffff;
+            background-color: #343434;
         }
     </style>
 </head>
@@ -53,7 +53,7 @@
                     if(result.code==0){//如果成功
                         layer.msg('发布成功',{
                             icon:6,
-                            time:500
+                            time:100000
                         },function(){
                             parent.window.location.reload();
                             var iframeIndex = parent.layer.getFrameIndex(window.name);

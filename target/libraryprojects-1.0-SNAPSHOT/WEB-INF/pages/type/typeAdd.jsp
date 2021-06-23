@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="<%=basePath%>css/public.css" media="all">
     <style>
         body {
-            background-color: #ffffff;
+            background-color: #343434;
         }
     </style>
 </head>
